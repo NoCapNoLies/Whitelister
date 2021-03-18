@@ -1,14 +1,13 @@
 <?php
-$user = 'root';
-$password = 'root';
-$db = 'user_info';
-$host = 'localhost';
-$port = 3306;
+$servername = "localhost";
+$name = "user_info";
+$username = "root";
+$password = "root";
 
 $key = $_GET["key"];
 $hwid = $_GET["hwid"];
 
-$conn = new mysqli($user, $password, $db, $host, $port);
+$conn = new mysqli($servername, $username, $password, $name);
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
