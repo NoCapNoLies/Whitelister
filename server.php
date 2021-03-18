@@ -1,17 +1,14 @@
 <?php
-  
-<?php
-$user = 'root';
-$password = 'root';
-$db = 'user_info';
-$host = 'localhost';
-$port = 3306;
+$servername = "localhost";
+$name = "user_info";
+$username = "root";
+$password = "root";
 
 $key = $_GET["key"];
 
 $hwidTypes = array("Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint");
 
-$conn = new mysqli($user, $password, $db, $host, $port);
+$conn = new mysqli($servername, $username, $password, $name);
 
 $result = $conn->query("SELECT userkey,hwid,Blacklisted,Reason FROM whitelistbot WHERE userkey = '$key'");
 
